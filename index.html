@@ -29,6 +29,7 @@
         <h1 class="intital-page-heading">Flubio</h1>
         <p>Developer out of passion I guess :P</p>
         <p id="welcome-back"></p>
+        <p id="first"></p>
       </div>
       <a class="scroll" onclick="alert('can\' scroll yet, dummy')"><img src="./resources/images/scroll_down.webp" alt="SCROLL DOWN"></a>
     </div>
@@ -41,11 +42,16 @@
   <script type="text/javascript">
     function welcome() {
       var welcome = document.getElementById('welcome-back');
+      var fistJoined = document.getElementById('first');
 
       if (getCookie('user') == 'user') {
         welcome.innerHTML = 'Welcome back 😊';
+        const date = new Date(getCookie('date'));
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        fistJoined.innerHTML = 'You first visited this site on: ' + date.toLocaleDateString(undefined, options);
       } else {
         document.cookie = "user=user";
+        document.cookie = "date=" + new Date();
         welcome.innerHTML = 'Welcome to my Site for the first time 👋';
       }
     }
