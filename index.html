@@ -28,8 +28,7 @@
       <div class="main">
         <h1 class="intital-page-heading">Flubio</h1>
         <p id="text-heading"></p>
-        <p id="welcome-back"></p>
-        <p id="first" class="invisible"></p>
+        <p id="welcome"></p>
       </div>
       <a class="scroll" onclick="alert('can\' scroll yet, dummy')"><img src="./resources/images/scroll_down.webp" alt="SCROLL DOWN"></a>
     </div>
@@ -42,34 +41,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="./resources/scripts/i18n.js"></script>
   <script type="text/javascript">
-    function welcome() {
+    function siteEssential() {
       i18n();
-      var welcome = document.getElementById('welcome-back');
-      var fistJoined = document.getElementById('first');
-
-      if (getCookie('user') == 'user') {
-        welcome.innerHTML = 'Welcome back 😊';
-        const date = new Date(getCookie('date'));
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        firstJoined.classList.remove('invisible');
-        fistJoined.innerHTML = firstJoined.innerHTML + date.toLocaleDateString(undefined, options);
-      } else {
-        document.cookie = "user=user";
-        document.cookie = "date=" + new Date();
-        welcome.innerHTML = 'Welcome to my Site for the first time 👋';
-      }
+      //more functions will be loaded here
     }
-    function getCookie(name) {
-      var nameEQ = name + "=";
-      //alert(document.cookie);
-      var ca = document.cookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length, c.length);
-      }
-      return null;
-    } 
   </script>
 </body>
 

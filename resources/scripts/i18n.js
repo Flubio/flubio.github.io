@@ -9,8 +9,6 @@ function i18n() {
         data.i18n.forEach(element => {
           translations.push(element);
         });
-        console.log(langsettings);
-        console.log(translations);
         translations.forEach(element => {
           document.getElementById(element.key).innerHTML = element.translation;
         });
@@ -22,8 +20,6 @@ function i18n() {
         data.i18n.forEach(element => {
           translations.push(element);
         });
-        console.log(langsettings);
-        console.log(translations);
         translations.forEach(element => {
           document.getElementById(element.key).innerHTML = element.translation;
         });
@@ -35,8 +31,6 @@ function i18n() {
         data.i18n.forEach(element => {
           translations.push(element);
         });
-        console.log(langsettings);
-        console.log(translations);
         translations.forEach(element => {
           document.getElementById(element.key).innerHTML = element.translation;
         });
@@ -44,3 +38,16 @@ function i18n() {
       break;
   }
 }
+
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  //alert(document.cookie);
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1);
+    if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+} 
