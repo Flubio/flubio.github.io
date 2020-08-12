@@ -43,6 +43,10 @@
   text-align: center;
 }
 .scroll img{
-  height: 7rem;
-  width: 7rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+.invisible{
+  display: none;
 }
