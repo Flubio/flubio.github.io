@@ -22,12 +22,13 @@
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body>
+<body onload="welcome()">
   <div class="parent">
     <div class="blur">
       <div class="main">
         <h1 class="intital-page-heading">Flubio</h1>
         <p>Developer out of passion I guess :P</p>
+        <p id="welcome-back"></p>
       </div>
       <a class="scroll" onclick="alert('can\' scroll yet, dummy')"><img src="./resources/images/scroll_down.webp" alt="SCROLL DOWN"></a>
     </div>
@@ -37,6 +38,29 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    function welcome() {
+      var welcome = document.getElementById('welcome-back');
+
+      if (getCookie('user') == 'user') {
+        welcome.innerHTML = 'Welcome back 😊';
+      } else {
+        document.cookie = "user=user";
+        welcome.innerHTML = 'Welcome to my Site for the first time 👋';
+      }
+    }
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      //alert(document.cookie);
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1);
+        if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    } 
+  </script>
 </body>
 
 </html>
