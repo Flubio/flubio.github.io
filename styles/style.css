@@ -50,3 +50,8 @@
 .invisible{
   display: none;
 }
+
+.footer{
+  height: 4rem;
+  display: flex;
+}

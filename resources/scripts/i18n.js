@@ -1,44 +1,26 @@
 function i18n() {
-  var langsettings;
-  var translations = [];
-  var localLang = navigator.language;
-  switch (localLang.substr(0, 2)) {
-    case 'en':
-      jQuery.getJSON("https://log.flubio.de/api/github/pages/i18n/english.json", function (data) {
-        langsettings = data.langSettings;
-        data.i18n.forEach(element => {
-          translations.push(element);
-        });
-        translations.forEach(element => {
-          document.getElementById(element.key).innerHTML = element.translation;
-        });
-      });
-      break;
-    case 'de':
-      jQuery.getJSON("https://log.flubio.de/api/github/pages/i18n/german.json", function (data) {
-        langsettings = data.langSettings;
-        data.i18n.forEach(element => {
-          translations.push(element);
-        });
-        translations.forEach(element => {
-          document.getElementById(element.key).innerHTML = element.translation;
-        });
-      });
-      break;
-    default:
-      jQuery.getJSON("https://log.flubio.de/api/github/pages/i18n/english.json", function (data) {
-        langsettings = data.langSettings;
-        data.i18n.forEach(element => {
-          translations.push(element);
-        });
-        translations.forEach(element => {
-          document.getElementById(element.key).innerHTML = element.translation;
-        });
-      });
-      break;
-  }
-}
+  let langsettings;
+  let translations = [];
+  let localLang = navigator.language;
+  let shortLang = localLang.substr(0, 2);
 
+  let longLangs = new Map()
+    .set("en", "english")
+    .set("de", "german");
+
+  let fullLang = longLangs.get(shortLang) || "english";
+
+  jQuery.getJSON(`https://log.flubio.de/api/github/pages/i18n/${fullLang}.json`, function (data) {
+    langsettings = data.langSettings;
+    document.getElementById('lang').innerHTML = 'Language: ' + langsettings.fullName + '| Cuntrycode: ' + langsettings.countrycode + '| LangID: ' + langsettings.id;
+    data.i18n.forEach(element => {
+      translations.push(element);
+    });
+    translations.forEach(element => {
+      document.getElementById(element.key).innerHTML = element.translation;
+    });
+  });
+}
 
 function getCookie(name) {
   var nameEQ = name + "=";
