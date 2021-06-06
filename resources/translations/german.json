@@ -1,0 +1,25 @@
+{
+  "langSettings": {
+    "fullName": "German",
+    "countrycode": "de",
+    "id": 2
+  },
+  "i18n": [
+    {
+      "key": "text-heading",
+      "translation": "Entwickler aus Leidenschaft"
+    },
+    {
+      "key": "welcome",
+      "translation": "Willkommen auf meiner GitHub Page 👋"
+    },
+    {
+      "key": "web",
+      "translation": "Meine Webseite: <a href='https://flubio.de'>flubio.de</a>"
+    },
+    {
+      "key": "aboutme",
+      "translation": "I've started coding when I was 12 (can't consider playing arround with html as coding i know).\nOver the years I gained some knowladge in Html, CSS, SCSS, Type-/Javascript, Java, C#, linux Shell and a little bit c++. I'm aiming to study Computer Science abroad or in germany.\nI'll write my GCSE 2021 and will then continue trying to graduate school of further education to get my a levels."
+    }
+  ]
+}

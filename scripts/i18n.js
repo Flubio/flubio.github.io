@@ -1,16 +1,16 @@
+
+let longLangs = new Map()
+  .set("en", "english")
+  .set("de", "german");
+
+let localLang = navigator.language;
+let shortLang = localLang.substr(0, 2);
+let langsettings;
+let translations = [];
+
+let fullLang = longLangs.get(shortLang) || "english";
 function i18n() {
-  let langsettings;
-  let translations = [];
-  let localLang = navigator.language;
-  let shortLang = localLang.substr(0, 2);
-
-  let longLangs = new Map()
-    .set("en", "english")
-    .set("de", "german");
-
-  let fullLang = longLangs.get(shortLang) || "english";
-
-  jQuery.getJSON(`https://log.flubio.de/api/github/pages/i18n/${fullLang}.json`, function (data) {
+  jQuery.getJSON(`/resources/translations/${fullLang}.json`, function (data) {
     langsettings = data.langSettings;
     document.getElementById('lang').innerHTML = 'Language: ' + langsettings.fullName + '| Cuntrycode: ' + langsettings.countrycode + '| LangID: ' + langsettings.id;
     data.i18n.forEach(element => {
@@ -20,6 +20,13 @@ function i18n() {
       document.getElementById(element.key).innerHTML = element.translation;
     });
   });
+}
+
+function getValByKey(key) {
+  translations.forEach(translation => {
+    if (translation.key == key)
+      return translation.translation;
+  })
 }
 
 function getCookie(name) {
@@ -32,4 +39,4 @@ function getCookie(name) {
     if (c.indexOf(nameEQ) != -1) return c.substring(nameEQ.length, c.length);
   }
   return null;
-} 
+}
