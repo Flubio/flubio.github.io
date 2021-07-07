@@ -85,7 +85,7 @@ class Termynal {
       if (i18nTag != null) {
         console.log(i18nTag);
         console.log(translations);
-        line.innerHTML = translations.find(el => el.key == i18nTag).translation;
+        line.innerHTML = translations.find(el => el.key == i18nTag).translation.replace("{age}", (new Date().getFullYear() - 2004));
       }
 
       if (type == 'input') {

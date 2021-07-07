@@ -18,8 +18,12 @@
       "translation": "Meine Webseite: <a href='https://flubio.de'>flubio.de</a>"
     },
     {
+      "key": "whoami",
+      "translation": "Matthias aka. flubi0/flubio, {age} Jahre alt aus Deutschland"
+    },
+    {
       "key": "aboutme",
-      "translation": "I've started coding when I was 12 (can't consider playing arround with html as coding i know).\nOver the years I gained some knowladge in Html, CSS, SCSS, Type-/Javascript, Java, C#, linux Shell and a little bit c++. I'm aiming to study Computer Science abroad or in germany.\nI'll write my GCSE 2021 and will then continue trying to graduate school of further education to get my a levels."
+      "translation": "Ich habe mit 12 angefangen zu programmieren (man kann das Rumspielen mit HTML nicht wirklich als programmieren bezeichnen, ich weiß)\nIm Laufe der Jahre habe ich einige Kenntnisse in Html, CSS, SCSS, Type-/Javascript, Java, C#, Linux Shell und ein bisschen c++ erlangt.\nIch strebe an, Informatik im Ausland oder in Deutschland zu studieren. Ich schreibe 2021 meinen Realschulabschluss, danach werde ich auf ein Gymnasium gehen, um mein Abitur zu machen."
     }
   ]
 }
