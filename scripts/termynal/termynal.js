@@ -66,7 +66,6 @@ class Termynal {
     this.container.style.minHeight = containerStyle.height !== '0px' ?
       containerStyle.height : undefined;
     this.i18n();
-    console.log(this.translations);
     this.container.setAttribute('data-termynal', '');
     this.container.innerHTML = '';
     this.start();
@@ -83,8 +82,6 @@ class Termynal {
       const delay = line.getAttribute(`${this.pfx}-delay`) || this.lineDelay;
       const i18nTag = line.getAttribute(`${this.pfx}-i18n`);
       if (i18nTag != null) {
-        console.log(i18nTag);
-        console.log(translations);
         line.innerHTML = translations.find(el => el.key == i18nTag).translation.replace("{age}", (new Date().getFullYear() - 2004));
       }
 
