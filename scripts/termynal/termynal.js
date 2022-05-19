@@ -82,7 +82,7 @@ class Termynal {
       const delay = line.getAttribute(`${this.pfx}-delay`) || this.lineDelay;
       const i18nTag = line.getAttribute(`${this.pfx}-i18n`);
       if (i18nTag != null) {
-        line.innerHTML = translations.find(el => el.key == i18nTag).translation.replace("{age}", (new Date().getFullYear() - 2004));
+        line.innerHTML = translations.find(el => el.key == i18nTag).translation.replace("{age}", _calculateAge(new Date("2004-06-22")));
       }
 
       if (type == 'input') {
@@ -224,4 +224,10 @@ if (document.currentScript.hasAttribute('data-termynal-container')) {
   const containers = document.currentScript.getAttribute('data-termynal-container');
   containers.split('|')
     .forEach(container => new Termynal(container))
+}
+
+function _calculateAge(birthday) { // birthday is a date
+  var ageDifMs = Date.now() - birthday.getTime();
+  var ageDate = new Date(ageDifMs); // miliseconds from epoch
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
